@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+#message {
+    color: #0066cc;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    border: 2px dashed #0066cc;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+}

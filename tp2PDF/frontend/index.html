@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Docker Microservices</h1>
+        <p>Ce frontend recupere les donnees du backend via une API.</p>
+        <div id="message">Chargement...</div>
+        <button onclick="fetchData()">Rafraichir</button>
+    </div>
+
+    <script>
+        function fetchData() {
+            document.getElementById('message').textContent = 'Chargement...';
+
+            fetch('http://localhost:5000/api/message')
+                .then(function(reponse) {
+                    return reponse.json();
+                })
+                .then(function(data) {
+                    document.getElementById('message').textContent = data.message;
+                })
+                .catch(function(erreur) {
+                    console.error('Erreur:', erreur);
+                    document.getElementById('message').textContent = 'Erreur de connexion au backend!';
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchData);
+    </script>
+</body>
+</html>
